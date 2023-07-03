@@ -18,7 +18,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: status
+      - name: order_status
         description: '{{ doc("order_status") }}'
         tests:
           - accepted_values:
@@ -34,13 +34,18 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
-      
-  # - name: fct_orders
-  #   columns:
-  #     - name: amount
-  #       tests:
-  #         - dbt_utils.expression_is_true:
-  #             expression: "amount >= 0"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
