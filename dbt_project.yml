@@ -33,6 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   Admin_modularity:
+    +required_test: {"unique.*|not_null":2}
     marts:
       core:
         +materialized: table
@@ -41,3 +42,9 @@ models:
         +materialized: view
       stripe:
         +materialized: view
+
+tests:
+  jaffle_shop:
+    +saverity = warn
+    +store_failure = true
+

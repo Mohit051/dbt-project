@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_customers
+  - name: stg_customer
     description: Staged customer data from our jaffle shop app.
     columns: 
       - name: customer_id
@@ -34,3 +34,27 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+      
+  # - name: fct_orders
+  #   columns:
+  #     - name: amount
+  #       tests:
+  #         - dbt_utils.expression_is_true:
+  #             expression: "amount >= 0"
+
+
+
+      # - name: amount
+      #   description: Dollars spent per order
+      #   tests: 
+      #     - dbt_expectations.expect_column_values_to_be_between: 
+      #     # this will perform what the dbt_utils.expression-is-true test does!
+      #         min_value: 0
+      #         row_condition: "order_id is not null" 
+      #         strictly: false
+      #     - dbt_expectations.expect_column_mean_to_be_between: 
+      #     # this will perform what our singular and generic tests do!
+      #         min_value: 1
+      #         group_by: [customer_id] 
+      #         row_condition: "order_id is not null" # (Optional)
+      #         strictly: false
