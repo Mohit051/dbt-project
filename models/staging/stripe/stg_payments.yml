@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: Staged payments data from our stripe.
+    tests:
+      - dbt_utils.expression_is_true:
+            expression: "payment_id >= 0"

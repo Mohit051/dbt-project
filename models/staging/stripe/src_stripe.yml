@@ -28,8 +28,9 @@ sources:
                   config:
                     limit: 10
                     store_failures: true
-                    schema: abc_test
+                    schema: abc_test            
         loaded_at_field: _etl_loaded_at
         freshness:
           warn_after: {count: 12, period: hour}
-          error_after: {count: 24, period: hour}        
+          error_after: {count: 24, period: hour}
+     
