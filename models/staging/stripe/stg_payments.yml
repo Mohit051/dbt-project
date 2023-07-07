@@ -6,3 +6,4 @@ models:
     tests:
       - dbt_utils.expression_is_true:
             expression: "payment_id >= 0"
+        
